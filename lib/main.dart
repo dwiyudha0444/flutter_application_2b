@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2b/beranda.dart';
 
 void main() {
   runApp(const MaterialApp(
     title: 'Flutter Praktik (2b))',
     home: Login(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 
@@ -57,7 +59,10 @@ class Login extends StatelessWidget {
             const SizedBox(height: 50),
             ButtonTheme(
                 child: ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Beranda()));
+              },
               icon: const Icon(Icons.login),
               label: const Text('Masuk'),
               style: ElevatedButton.styleFrom(
